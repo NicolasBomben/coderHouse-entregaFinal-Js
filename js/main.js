@@ -37,14 +37,13 @@ alert("Carga con exito!");
 
 console.log(productos);
 
-
 //uso el for of para recorrer el array y creo un contenedor para mostrar la data. Se muestran los productos previamente guardados y el agregado.
 for(let p of productos){
     // creo un div donde se van a mostrar los productos.
     let contenedor = document.createElement("div");
     // uso el innerHTML para mostrar la lista.
     contenedor.innerHTML = `<h3> Nombre: ${p.nombre}</h3>
-                            <p> Precio $: ${p.precio}</p>
-                            <p> Precio $: ${p.talle}</p>`;
+                            <p> Precio $ ${p.precio}</p>
+                            <p> Talle: ${p.talle}</p>`;
     document.body.appendChild(contenedor);
 }
