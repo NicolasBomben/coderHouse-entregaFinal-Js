@@ -25,6 +25,7 @@ let productoIngresado = productos.filter(producto => producto.nombre.includes(bu
 
 alert("Su resultado de busqueda es" + JSON.stringify(productoIngresado));
 
+
 //cargar nuevo producto
 let cargarProducto = prompt("Si desea puede ingresar nuevos productos");
 let agregarNombre = prompt("Ingrese el nombre del nuevo producto");
@@ -35,3 +36,15 @@ productos.push(new Producto(agregarNombre, agregarPrecio, agregarTalle));
 alert("Carga con exito!");
 
 console.log(productos);
+
+
+//uso el for of para recorrer el array y creo un contenedor para mostrar la data. Se muestran los productos previamente guardados y el agregado.
+for(let p of productos){
+    // creo un div donde se van a mostrar los productos.
+    let contenedor = document.createElement("div");
+    // uso el innerHTML para mostrar la lista.
+    contenedor.innerHTML = `<h3> Nombre: ${p.nombre}</h3>
+                            <p> Precio $: ${p.precio}</p>
+                            <p> Precio $: ${p.talle}</p>`;
+    document.body.appendChild(contenedor);
+}
