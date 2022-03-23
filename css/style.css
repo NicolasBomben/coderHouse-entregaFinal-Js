@@ -1,0 +1,51 @@
+/*reinicio css*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*importo font*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,700&display=swap');
+
+body{
+    width: auto;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    background-color: #c2ff05;
+}
+
+#normal-header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    font-size: 19px;
+    background-color: black;
+}
+
+#header-img{
+    width: 100px;
+    margin-left: 15%;
+}
+
+#nav-bar{}
+
+#nav-bar ul{
+    list-style: none;
+    display: flex;
+}
+
+#nav-bar li{
+    padding: 20px;
+    margin: 4px;
+}
+
+#nav-bar ul, a{
+    text-decoration: none;
+    color: white;
+}
+
+#nav-bar a:hover{
+    color: #c2ff05;
+}
