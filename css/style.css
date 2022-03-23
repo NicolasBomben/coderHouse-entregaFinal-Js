@@ -11,7 +11,7 @@ body{
     height: auto;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    background-color: #c2ff05;
+    background-color: white;
 }
 
 #normal-header{
@@ -20,7 +20,7 @@ body{
     align-items: center;
     width: 100%;
     margin: auto;
-    font-size: 19px;
+    font-size: 15px;
     background-color: black;
 }
 
