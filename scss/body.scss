@@ -2,14 +2,27 @@
 *{
     margin: 0;
     padding: 0;
+    overflow-x: none;
 }
 /*importo font*/
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,700&display=swap');
 
 body{
     width: auto;
-    height: auto;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    background-color: white;
+}
+
+.padre-banner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    height: auto;
+    width: auto;
+    max-height: 800px;
+    max-width: 800px;
 }
