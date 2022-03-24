@@ -1,0 +1,15 @@
+/*reinicio css*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*importo font*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,700&display=swap');
+
+body{
+    width: auto;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    background-color: white;
+}

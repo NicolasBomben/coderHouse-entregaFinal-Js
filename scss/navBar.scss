@@ -1,0 +1,35 @@
+#normal-header {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: auto;
+	font-size: 15px;
+	background-color: black;
+}
+#header-img {
+	width: 100px;
+	margin-left: 15%;
+}
+
+#nav-bar {
+	ul {
+		list-style: none;
+		display: flex;
+		text-decoration: none;
+		color: white;
+	}
+	li {
+		padding: 20px;
+		margin: 4px;
+	}
+	a {
+		&:hover {
+			color: #c2ff05;
+		}
+	}
+}
+a {
+	text-decoration: none;
+	color: white;
+}
