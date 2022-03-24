@@ -20,9 +20,9 @@ body{
     align-items: center;
 }
 
-img{
-    height: auto;
-    width: auto;
-    max-height: 800px;
-    max-width: 800px;
+.winter-banner{
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
