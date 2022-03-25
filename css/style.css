@@ -47,14 +47,36 @@ body {
   justify-content: center;
   align-items: center; }
 
-.winter-banner {
-  position: static;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
+.banner-winter {
+  width: 100%; }
 
 .footer {
   position: static;
   width: 100%;
   height: 200px;
   background-color: black; }
+
+.container-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch; }
+
+.text-footer {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  /*background-color: aliceblue;*/ }
+  .text-footer ul {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    list-style: none; }
+  .text-footer :hover {
+    color: #c2ff05; }
+  .text-footer p {
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding-top: 10px;
+    text-align: center; }
