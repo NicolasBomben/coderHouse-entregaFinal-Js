@@ -80,3 +80,41 @@ body {
     text-align: center;
     padding-top: 10px;
     text-align: center; }
+
+.container-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.card {
+  max-width: 960px;
+  height: 550px;
+  margin: 40px;
+  background-color: #c2ff05; }
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.card-image {
+  max-width: 300px;
+  height: 400px; }
+
+.card-description {
+  color: black;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 10px; }
+
+.btn {
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: black;
+  color: white; }
+  .btn:hover {
+    color: #c2ff05; }
