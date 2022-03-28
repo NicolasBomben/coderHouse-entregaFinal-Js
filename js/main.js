@@ -20,14 +20,14 @@ productos.push(new Producto("gorra", 1500, "M,L"));
 
 
 //buscar un producto por nombre previamente guardado.
-let buscarProducto = prompt("Ingrese el nombre del producto que desea buscar");
+/*let buscarProducto = prompt("Ingrese el nombre del producto que desea buscar");
 let productoIngresado = productos.filter(producto => producto.nombre.includes(buscarProducto));
 
-alert("Su resultado de busqueda es" + JSON.stringify(productoIngresado));
+alert("Su resultado de busqueda es" + JSON.stringify(productoIngresado));*/
 
 
 //cargar nuevo producto
-let cargarProducto = prompt("Si desea puede ingresar nuevos productos");
+/*let cargarProducto = prompt("Si desea puede ingresar nuevos productos");
 let agregarNombre = prompt("Ingrese el nombre del nuevo producto");
 let agregarPrecio = prompt("Ingrese el precio del nuevo producto");
 let agregarTalle = prompt("Ingrese el talle del nuevo producto");
@@ -35,7 +35,7 @@ productos.push(new Producto(agregarNombre, agregarPrecio, agregarTalle));
 
 alert("Carga con exito!");
 
-console.log(productos);
+console.log(productos);*/
 
 //uso el for of para recorrer el array y creo un contenedor para mostrar la data. Se muestran los productos previamente guardados y el agregado.
 for(let p of productos){
