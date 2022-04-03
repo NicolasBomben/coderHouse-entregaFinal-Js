@@ -1,3 +1,9 @@
+const containerProductos = document.getElementById("contenedor");
+const botonAgregar = document.getElementById("btnAgregar");
+let carrito = {};
+
+
+
 class Producto{
 
     constructor(id,nombre,precio,talle) {
@@ -11,7 +17,7 @@ class Producto{
 
 
 //declaro array vacio donde se van a ir guardando las cargas de productos.
-const productos = [];
+let productos = [];
 
 console.log(productos);
 
@@ -25,7 +31,6 @@ productos.push(new Producto(6,"Pantalon Soft Denim Acid", 4500, "M,L,XL"));
 
 
 //utilizo un for of para recorrer el array y DOM para visualizar en pantalla los productos.
-    const containerProductos = document.getElementById("contenedor")
     for( let p of productos){
         let productoHtml = document.createElement("div")
         productoHtml.className = "container-cards";
@@ -39,28 +44,41 @@ productos.push(new Producto(6,"Pantalon Soft Denim Acid", 4500, "M,L,XL"));
                         <h3>${p.precio}</h3>
                         <h4>${p.talle}</h4>
                         <br>
-                        <button class="btn" id="btnAgregar">AGREGAR</button>
+                        <button class="btn" id="btnAgregar" ${p.id}>AGREGAR</button>
                       </div>
                   </div>
         `;
         containerProductos.appendChild(productoHtml);
 
-        
 }
 
-//declaro array de carrito donde se guardar los productos agregados.
-const carrito = [];
-
-//id Storage
-//let contador = 0;
-
-const botonAgregar = document.getElementById("btnAgregar");
-//funcion al cargar la pagina y local storage
-botonAgregar.addEventListener("click", (e) =>{
-    for(let i = 0; i < productos.length; i++){
-        carrito.push(e.target.productos);
-    }
-    //cargarListaProductos();
+containerProductos.addEventListener( 'click', e => {
+    agregarAlCarro(e);
 });
 
-console.log(carrito);
+const agregarProductos = data => {
+    data.forEach(producto => {
+        botonAgregar.querySelector('button').dataset.id = producto.id;
+    });
+}
+//agregar al carro
+const agregarAlCarro = e => {
+    //console.log(e.target);
+    //console.log(e.target.classList.contains('.btn'));
+    if(e.target.classList.contains('btn')){
+        
+        setCarrito(e.target.parentElement);
+
+    }
+    e.stopPropagation();
+   
+}
+
+const setCarrito = objeto => {
+
+    const producto = {
+        id: objeto.querySelector('button').dataset.id,
+    }
+
+    console.log(producto);
+}

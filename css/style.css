@@ -119,3 +119,8 @@ body {
   color: white; }
   .btn:hover {
     color: #c2ff05; }
+
+.container-table {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
