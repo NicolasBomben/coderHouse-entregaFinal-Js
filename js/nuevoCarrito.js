@@ -3,46 +3,47 @@ const carritoDeCompras = [];
 
 
 const productosEnTienda =[{
+
     "id": "remeraNegra",
     "nombre": "REMERA BASICA NEGRA",
     "precio": 2800,
     "talle": "M,L,XL",
-    "imagenURL": '../images/RemeraBasicaNegra.jpeg'
+    "imagenURL":' images/remeranegra.jpeg',
 },
 {
     "id": "morralUno",
     "nombre": "MORRAL 01",
     "precio": 1800,
     "talle": "UNICO",
-    "imagenURL": '../images/Morral01.jpeg'
+    "imagenURL":' images/morraluno.jpeg',
 },
 {
     "id": "joggerNegro",
     "nombre": "PANTALON JOGGER ESTAMPADO",
     "precio": 5000,
     "talle": "32,36.38",
-    "imagenURL": '../images/PantalonJoggerEstampado.jpeg' 
+    "imagenURL":' images/joggerestampado.jpeg', 
 },
 {
     "id": "remeraBlanca",
     "nombre": "REMERA BASICA BLANCA",
     "precio": 2800,
     "talle": "M,L,XL",
-    "imagenURL": '../images/RemeraBasicaBlanca.jpeg' 
+    "imagenURL":' images/remerablanca.jpeg', 
 },
 {
     "id": "gorraBlock",
     "nombre": "GORRA COLOR BLOCK",
     "precio": 1500,
     "talle": "UNICO",
-    "imagenURL": '../images/GorraColorBlock.jpeg' 
+    "imagenURL":' images/gorracolor.jpeg', 
 },
 {
     "id": "joggerSoft",
     "nombre": "PANTALON SOFT DENIM ACID",
     "precio": 4500,
     "talle": "32,36,38",
-    "imagenURL": '../images/PantalonSoftDenimAcid.jpeg' 
+    "imagenURL":' images/joggerdenim.jpeg',
 }
 ]
 
@@ -55,7 +56,7 @@ function mostrarProductos(){
         const contenedor = `
         <div class="card">
                       <div class="image-container">
-                          <img class="card-image" src=${productos.imagenURL}/>
+                          <img src=${productos.imagenURL} class="card-image"/>
                       </div>
                       <div class="card-description">
                         <h3>${productos.nombre}</h3>
@@ -84,7 +85,21 @@ btnCarrito.forEach(btn => {
             }
         }
         mostrarItemsCarrito();
-        alert("Producto Agregado");
+        Toastify({
+            text: "✔ Agregado al Carrito",
+            duration: 3000,
+            /*destination: "./index.html",*/
+            newWindow: true,
+            close: true,
+            gravity: "top", 
+            position: "right", 
+            stopOnFocus: true, 
+            style: {
+                background: "black",
+                color: "#c2ff05",
+            },
+            onClick: function () {} // Callback after click
+        }).showToast();
     });
 });
 
