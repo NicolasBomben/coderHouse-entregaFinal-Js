@@ -51,7 +51,7 @@ body {
   width: 100%; }
 
 .footer {
-  position: static;
+  /*position: static;*/
   width: 100%;
   height: 200px;
   background-color: black; }
@@ -123,4 +123,15 @@ body {
 .container-table {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 300px;
+  background-color: red; }
+
+.img-position {
+  display: flex;
+  justify-content: center;
   align-items: center; }
+
+.img-features {
+  padding-top: 15px; }
