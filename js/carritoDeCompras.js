@@ -51,6 +51,21 @@ const agregarAlCarrito = e => {
     if(e.target.classList.contains("btn")){
         manipularCarrito(e.target.parentElement);
     }
+    Toastify({
+        text: "Agregado al Carrito",
+        duration: 3000,
+        destination: "",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "black",
+          color: "#c2ff05"
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     e.stopPropagation()
 }
 
