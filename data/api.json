@@ -4,41 +4,41 @@
     "nombre": "REMERA BASICA NEGRA",
     "precio": 2800,
     "talle": "M,L,XL",
-    "imagenURL":"images/remeranegra.jpeg"
+    "imagenURL":"../images/remeranegra.jpeg"
 },
 {
     "id": 2,
     "nombre": "MORRAL 01",
     "precio": 1800,
     "talle": "UNICO",
-    "imagenURL":"images/morraluno.jpeg"
+    "imagenURL":"../images/morraluno.jpeg"
 },
 {
     "id": 3,
     "nombre": "PANTALON JOGGER ESTAMPADO",
     "precio": 5000,
     "talle": "32,36.38",
-    "imagenURL":"images/joggerestampado.jpeg"
+    "imagenURL":"../images/joggerestampado.jpeg"
 },
 {
     "id": 4,
     "nombre": "REMERA BASICA BLANCA",
     "precio": 2800,
     "talle": "M,L,XL",
-    "imagenURL":"images/remerablanca.jpeg" 
+    "imagenURL":"../images/remerablanca.jpeg" 
 },
 {
     "id": 5,
     "nombre": "GORRA COLOR BLOCK",
     "precio": 1500,
     "talle": "UNICO",
-    "imagenURL":"images/gorracolor.jpeg" 
+    "imagenURL":"../images/gorracolor.jpeg" 
 },
 {
     "id": 6,
     "nombre": "PANTALON SOFT DENIM ACID",
     "precio": 4500,
     "talle": "32,36,38",
-    "imagenURL":"images/joggerdenim.jpeg"
+    "imagenURL":"../images/joggerdenim.jpeg"
 }
 ]

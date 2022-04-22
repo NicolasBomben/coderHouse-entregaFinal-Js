@@ -7,19 +7,10 @@ const template = document.getElementById("card-template").content;
 const fragment = document.createDocumentFragment();
 let carrito = {};
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    traerData();
-});
-
-items.addEventListener('click', (e) => {
-    agregarAlCarrito(e);
-});
-
 //llamo la data con fetch
 const traerData = async () => {
     try {
-        const res = await fetch('api.json');
+        const res = await fetch('../data/api.json');
         const data = await res.json();
         mostrarCards(data);
         //console.log(data);
@@ -27,6 +18,28 @@ const traerData = async () => {
         console.log(error);
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    traerData();
+
+    //localstorage
+    if(localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'));
+        mostrarCarrito();
+    }
+
+});
+
+items.addEventListener('click', (e) => {
+    agregarAlCarrito(e);
+});
+
+carritoItems.addEventListener('click', (e) => {
+    //aumentar y disminuir items en el carrito
+    accionesCarrito(e);
+});
+
+
 
 //funcion para mostrar cards con su data por pantalla.
 const mostrarCards = data => {
@@ -45,9 +58,8 @@ const mostrarCards = data => {
     items.appendChild(fragment);
 }
 
+//funcion para agregar items al carrito
 const agregarAlCarrito = e => {
-    //console.log(e.target);
-    //console.log(e.target.dataset.id);(e.target.classList.contains("btn"));
     if(e.target.classList.contains("btn")){
         manipularCarrito(e.target.parentElement);
     }
@@ -69,6 +81,7 @@ const agregarAlCarrito = e => {
     e.stopPropagation()
 }
 
+
 const manipularCarrito = obj => {
     //obtengo el id del boton
     const producto = {
@@ -89,7 +102,7 @@ const manipularCarrito = obj => {
 
 //funcion para mostrar lo seleccionado del carro
 const mostrarCarrito = () => {
-    //console.log(carrito);
+    
     carritoItems.innerHTML = ``;
 
     Object.values(carrito).forEach( producto => {
@@ -108,8 +121,12 @@ const mostrarCarrito = () => {
     carritoItems.appendChild(fragment);
 
     mostrarFooterCarrito();
+
+    //almacenar items en localstorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+//funcion para mostrar el carrito y sus items cuando se van agregando
 const mostrarFooterCarrito = () => {
 
     mostrarFooter.innerHTML = ``
@@ -118,6 +135,7 @@ const mostrarFooterCarrito = () => {
         mostrarFooter.innerHTML = `
         <th>Carrito Vacio - Comience a comprar</th>
         `
+        return;
     }
 
     const sumarCantidades = Object.values(carrito).reduce((acumular, {cantidad})=> acumular + cantidad, 0);
@@ -128,7 +146,77 @@ const mostrarFooterCarrito = () => {
 
     const clonar = footerCarrito.cloneNode(true);
     fragment.appendChild(clonar);
-
     mostrarFooter.appendChild(fragment);
 
+    const vaciarCarrito = document.getElementById("vaciar-carrito");
+    vaciarCarrito.addEventListener("click", () => {
+        carrito = {}
+        mostrarCarrito();
+        Toastify({
+            text: "Ups parece que te arrepentiste",
+            duration: 4000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "black",
+              color: "white",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+    });
+
+    const comprar = document.getElementById("realizar-compra");
+    comprar.addEventListener("click", () => {
+        carrito = {};
+        mostrarCarrito();
+        Toastify({
+            text: "Compra realizada con exito, te llegara un email con el numero de seguimiento. Gracias por tu compra",
+            duration: 4000,
+            destination: "",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "black",
+              color: "white",
+              width: "300px",
+              height: "150px"
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+    });
+
+}
+
+//funcion para restar o sumar items en el carrito
+const accionesCarrito = (e) => {
+    //console.log(e.target)
+    if(e.target.classList.contains('btn-sumar')){
+
+        const producto = carrito[e.target.dataset.id];
+        producto.cantidad ++;
+        carrito[e.target.dataset.id] = {...producto};
+        
+        mostrarCarrito();
+    }
+
+    if(e.target.classList.contains('btn-restar')){
+
+        const producto = carrito[e.target.dataset.id];
+        producto.cantidad --;
+
+        if(producto.cantidad === 0){
+            delete carrito[e.target.dataset.id];
+        }
+
+        mostrarCarrito();
+    }
+
+    e.stopPropagation();
 }

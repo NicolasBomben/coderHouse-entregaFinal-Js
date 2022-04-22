@@ -5,22 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Grotesca || Productos</title>
 </head>
 <body>
     <!--NAV BAR-->
     <header id="header">
         <div id="normal-header">
-          <a href="#" id="image-link"><img src="./images/logoGrotesca.png" alt="Grotesca Logo" id="header-img" /></a>
+          <a href="#" id="image-link"><img src="../images/logoGrotesca.png" alt="Grotesca Logo" id="header-img" /></a>
     
           <nav id="nav-bar">
             <ul>
-              <li class="nav-link" id="menu-item"><a href="index.html" class="menu-link"> HOME </a></li>
-              <li class="nav-link" id="menu-item"><a href="./pages/features.html" class="menu-link"> FEATURES </a></li>
-              <li class="nav-link" id="menu-item"><a href="" class="menu-link"> PRODUCTS </a></li>
-              <li class="nav-link" id="menu-item"><a href="" class="menu-link"> MEDIA </a></li>
-              <li class="nav-link" id="menu-item"><a href="" class="menu-link"> PRICING </a>
+              <li class="nav-link" id="menu-item"><a href="../index.html" class="menu-link"> HOME </a></li>
+              <li class="nav-link" id="menu-item"><a href="" class="menu-link"> PRODUCTOS </a></li>
+              <li class="nav-link" id="menu-item"><a href="quienesSomos.html" class="menu-link"> QUIENES SOMOS </a></li>
+              <li class="nav-link" id="menu-item"><a href="contactoFormulario.html" class="menu-link"> CONTACTANOS </a></li>
             </ul>
           </nav>
   
@@ -34,7 +33,7 @@
         </div>
 
         <!--mostrar carrito desde dom-->
-        <div>
+        <div class="contenedor-tabla">
           <table>
             <thead>
               <tr>
@@ -48,7 +47,7 @@
             <tbody id="carrito-items"></tbody>
             <tfoot>
               <tr id="carrito-footer">
-                <th>Carrito Vacio - Comience a comprar</th>
+                <th class="carrito-vacio">Carrito Vacio - Comience a comprar</th>
               </tr>
             </tfoot>
           </table>
@@ -89,11 +88,12 @@
           <td>10</td>
           <td>
             <button class="btn" id="vaciar-carrito">Vaciar Todo</button>
+            <button class="btn" id="realizar-compra">Comprar</button>
           </td>
           <td>$<span>500</span></td>
         </template>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-      <script src="./js/carritoDeCompras.js"></script>
+      <script src="../js/carritoDeCompras.js"></script>
 </body>
 <!--FOOTER-->
 <footer class="footer">
